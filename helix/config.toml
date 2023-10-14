@@ -1,0 +1,14 @@
+theme = "monokai_pro"
+[editor.indent-guides]
+render = true
+character = "┆"
+skip-levels = 1
+[editor.soft-wrap]
+enable = true
+wrap-at-text-width = true
+[editor]
+auto-pairs = false
+bufferline = "multiple"
+[keys.normal]
+C-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
