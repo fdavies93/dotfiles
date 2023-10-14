@@ -1,0 +1,4 @@
+[[language]]
+name = "markdown"
+formatter = { command = "mdformat", args=["-"] }
+text-width = 200
