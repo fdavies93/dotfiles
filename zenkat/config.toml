@@ -22,5 +22,8 @@ page_links = "[info]{title}[/info]\nOut: {out_links.href}\nIn: {in_links.href}"
 [queries]
 reduce_test = "list pages {lists.*.text} where any lists.*.text has business"
 [macros]
+zk_todo = "tasks --page 'title = zenkat-todo' --filter 'status = not done'"
+latest_5 = "list pages --sort 'modified_at asc' --limit -5"
+latest_10 = "list pages --sort 'modified_at asc' --limit -10"
 not_done = "tasks --filter 'status = not done'"
-latest = "list pages --sort 'modified_at desc'"
+latest = "list pages --sort 'modified_at asc'"
