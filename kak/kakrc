@@ -1,0 +1,26 @@
+eval %sh{kak-lsp -c $HOME/.config/kak-lsp/kak-lsp.toml --kakoune -s $kak_session}  # Not needed if you load it with plug.kak.
+hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp|markdown) %{
+    lsp-enable-window
+}
+
+colorscheme dracula
+
+hook global InsertCompletionShow .* %{
+      map window insert <tab> <c-n>
+        map window insert <s-tab> <c-p>
+}
+
+hook global InsertCompletionHide .* %{
+      unmap window insert <tab> <c-n>
+        unmap window insert <s-tab> <c-p>
+}
+
+add-highlighter global/ number-lines -hlcursor
+
+
+map global goto "n" '<esc>:buffer-next<ret>' -docstring "next buffer"
+map global goto "p" '<esc>:buffer-previous<ret>' -docstring "previous buffer"
+map global goto "b" '<esc>:prompt -buffer-completion buffer: %{ buffer %val{text} }<ret>' -docstring "buffer"
+
+set-option global tabs_modelinefmt '%val{cursor_line}:%val{cursor_char_column} {{mode_info}} '
+set-option global tabs_options --minified
