@@ -12,6 +12,6 @@ Make sure you're using a recent enough version of neovim or nvim-lsp won't be su
 
 ### Dependencies
 
-- [bufferline](https://github.com/akinsho/bufferline.nvim) 
-- [nvim-lsp](https://github.com/neovim/nvim-lspconfig)
+- [bufferline](https://github.com/akinsho/bufferline.nvim)
+- [vim-plug](https://github.com/junegunn/vim-plug)
 - [nerd fonts (git clone --depth 1; patched fira code)](https://github.com/ryanoasis/nerd-fonts)
