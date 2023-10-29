@@ -6,10 +6,25 @@ Plug 'https://github.com/neovim/nvim-lspconfig.git'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug ('akinsho/bufferline.nvim', { tag = '*' })
 Plug 'Mofiqul/dracula.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug ('nvim-telescope/telescope.nvim', { tag = '0.1.4' })
+Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+Plug ('ms-jpq/coq_nvim', {branch = 'coq'})
+Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
 
 vim.call('plug#end')
 
 vim.opt.number = true
+
+vim.g.mapleader = " "
+
+require('telescope')
+-- Setup telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- Setup Dracula
 vim.cmd[[colorscheme dracula]]
@@ -18,11 +33,12 @@ vim.cmd[[colorscheme dracula]]
 vim.opt.termguicolors = true
 require("bufferline").setup{}
 
+local coq = require "coq"
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.pylsp.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.marksman.setup {}
+lspconfig.pylsp.setup {coq.lsp_ensure_capabilities()}
+lspconfig.tsserver.setup {coq.lsp_ensure_capabilities()}
+lspconfig.marksman.setup {coq.lsp_ensure_capabilities()}
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
