@@ -47,6 +47,8 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 vim.keymap.set('n', 'gn', "<Cmd>bn<CR>", {silent = true})
 vim.keymap.set('n', 'gp', "<Cmd>bp<CR>", {silent = true})
+vim.keymap.set('n', '<leader><left>', "<C-w><left>", {silent = true})
+vim.keymap.set('n', '<leader><right>', "<C-w><right>", {silent = true})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
