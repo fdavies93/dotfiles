@@ -15,6 +15,7 @@ Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
 vim.call('plug#end')
 
 vim.opt.number = true
+vim.opt.cursorline = true
 
 vim.g.mapleader = " "
 
