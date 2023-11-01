@@ -2,8 +2,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug 'https://github.com/neovim/nvim-lspconfig.git'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'https://github.com/neovim/nvim-lspconfig.git'
 Plug ('akinsho/bufferline.nvim', { tag = '*' })
 Plug 'Mofiqul/dracula.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -18,7 +18,9 @@ vim.call('plug#end')
 
 vim.opt.number = true
 vim.opt.cursorline = true
-
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 vim.g.mapleader = " "
 
 require('telescope')
@@ -54,13 +56,21 @@ vim.keymap.set('n', 'gn', "<Cmd>bn<CR>", {silent = true})
 vim.keymap.set('n', 'gp', "<Cmd>bp<CR>", {silent = true})
 vim.keymap.set('n', '<leader><left>', "<C-w><left>", {silent = true})
 vim.keymap.set('n', '<leader><right>', "<C-w><right>", {silent = true})
+
 -- Kakoune-style x to select line
 vim.keymap.set('n', 'x', "^v$")
 vim.keymap.set('v', 'x', "<down>$")
 
+-- Obsidian-style move line with cmd+up / cmd+down
+-- Somewhat broken
+vim.keymap.set('n', '<D-up>','^v$d<up>^P')
+vim.keymap.set('n', '<D-down>','^v$d<down>^P')
+
 -- Fast scrolling
-vim.keymap.set('n', '<D-down>',"5<down>")
-vim.keymap.set('n', '<D-up>', "5<up>")
+vim.keymap.set('n', '<M-down>',"4<down>")
+vim.keymap.set('n', '<M-up>', "4<up>")
+vim.keymap.set('n', '<M-right>', "2e")
+vim.keymap.set('n', '<M-left>', "2b")
 
 vim.api.nvim_create_user_command("BClose", function (opts)
 	vim.cmd("bp")
