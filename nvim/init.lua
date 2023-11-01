@@ -54,9 +54,18 @@ vim.keymap.set('n', 'gn', "<Cmd>bn<CR>", {silent = true})
 vim.keymap.set('n', 'gp', "<Cmd>bp<CR>", {silent = true})
 vim.keymap.set('n', '<leader><left>', "<C-w><left>", {silent = true})
 vim.keymap.set('n', '<leader><right>', "<C-w><right>", {silent = true})
--- This one will take some work
+-- Kakoune-style x to select line
 vim.keymap.set('n', 'x', "^v$")
 vim.keymap.set('v', 'x', "<down>$")
+
+-- Fast scrolling
+vim.keymap.set('n', '<D-down>',"5<down>")
+vim.keymap.set('n', '<D-up>', "5<up>")
+
+vim.api.nvim_create_user_command("BClose", function (opts)
+	vim.cmd("bp")
+	vim.cmd("bd#")
+end, {})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
