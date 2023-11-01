@@ -11,6 +11,8 @@ Plug ('nvim-telescope/telescope.nvim', { tag = '0.1.4' })
 Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug ('ms-jpq/coq_nvim', {branch = 'coq'})
 Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
+Plug ('yaegassy/coc-htmldjango', {['do'] = 'yarn install --frozen-lockfile'})
+
 
 vim.call('plug#end')
 
@@ -40,6 +42,8 @@ local lspconfig = require('lspconfig')
 lspconfig.pylsp.setup {coq.lsp_ensure_capabilities()}
 lspconfig.tsserver.setup {coq.lsp_ensure_capabilities()}
 lspconfig.marksman.setup {coq.lsp_ensure_capabilities()}
+lspconfig.html.setup {coq.lsp_ensure_capabilities()}
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -50,6 +54,9 @@ vim.keymap.set('n', 'gn', "<Cmd>bn<CR>", {silent = true})
 vim.keymap.set('n', 'gp', "<Cmd>bp<CR>", {silent = true})
 vim.keymap.set('n', '<leader><left>', "<C-w><left>", {silent = true})
 vim.keymap.set('n', '<leader><right>', "<C-w><right>", {silent = true})
+-- This one will take some work
+vim.keymap.set('n', 'x', "^v$")
+vim.keymap.set('v', 'x', "<down>$")
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
