@@ -10,8 +10,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug ('nvim-telescope/telescope.nvim', { tag = '0.1.4' })
 Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug ('ms-jpq/coq_nvim', {branch = 'coq'})
-Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
 Plug ('yaegassy/coc-htmldjango', {['do'] = 'yarn install --frozen-lockfile'})
+Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
+Plug 'https://tpope.io/vim/commentary.git'
 
 
 vim.call('plug#end')
@@ -46,6 +47,18 @@ lspconfig.tsserver.setup {coq.lsp_ensure_capabilities()}
 lspconfig.marksman.setup {coq.lsp_ensure_capabilities()}
 lspconfig.html.setup {coq.lsp_ensure_capabilities()}
 
+vim.cmd("COQnow --shut-up")
+
+require'nvim-treesitter.configs'.setup
+{
+	ensure_installed = { "lua", "vim", "vimdoc", "python", "css", "html", "typescript", "javascript" },
+	sync_install = false,
+	auto_install = true,
+	highlight = {
+		enable = true
+	},
+}
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -62,9 +75,9 @@ vim.keymap.set('n', 'x', "^v$")
 vim.keymap.set('v', 'x', "<down>$")
 
 -- Obsidian-style move line with cmd+up / cmd+down
--- Somewhat broken
 vim.keymap.set('n', '<D-up>','^v$d<up>^P')
 vim.keymap.set('n', '<D-down>','^v$d<down>^P')
+
 
 -- Fast scrolling
 vim.keymap.set('n', '<M-down>',"4<down>")
