@@ -21,6 +21,6 @@ require("conf_telescope")
 require("aesthetic")
 require("keybinds")
 -- Keyboard layout dependent
-require("keybinds-win")
--- require("keybinds-macos")
+-- require("keybinds-win")
+require("keybinds-mac")
 require("commands")
