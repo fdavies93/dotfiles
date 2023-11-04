@@ -2,6 +2,8 @@
 -- For MacOS / Windows layout specific keybinds, see those files.
 
 -- Global mappings.
+
+vim.g.mapleader = " "
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -21,4 +23,3 @@ vim.keymap.set('n', '<M-down>',"4<down>")
 vim.keymap.set('n', '<M-up>', "4<up>")
 vim.keymap.set('n', '<M-right>', "2e")
 vim.keymap.set('n', '<M-left>', "2b")
-

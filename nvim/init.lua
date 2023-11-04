@@ -16,11 +16,14 @@ Plug ('yaegassy/coc-htmldjango', {['do'] = 'yarn install --frozen-lockfile'})
 
 vim.call('plug#end')
 
-require("lsps")
-require("conf_telescope")
-require("aesthetic")
 require("keybinds")
--- Keyboard layout dependent
--- require("keybinds-win")
 require("keybinds-mac")
 require("commands")
+
+require("lsps")
+require("aesthetic")
+require("conf_treesitter")
+require("conf_telescope")
+-- Keyboard layout dependent
+-- require("keybinds-win")
+
