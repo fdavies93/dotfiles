@@ -13,6 +13,7 @@ vim.keymap.set('n', 'gn', "<Cmd>bn<CR>", {silent = true})
 vim.keymap.set('n', 'gp', "<Cmd>bp<CR>", {silent = true})
 vim.keymap.set('n', '<leader><left>', "<C-w><left>")
 vim.keymap.set('n', '<leader><right>', "<C-w><right>")
+vim.keymap.set('n', "<leader>x", "<Cmd><CR>")
 vim.keymap.set('n', 'U',"<C-R>")
 -- Kakoune-style x to select line
 vim.keymap.set('n', 'x', "^v$")
