@@ -13,7 +13,7 @@ Plug 'https://github.com/neovim/nvim-lspconfig.git'
 Plug ('ms-jpq/coq_nvim', {branch = 'coq'})
 Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
 Plug ('yaegassy/coc-htmldjango', {['do'] = 'yarn install --frozen-lockfile'})
-
+Plug 'simrat39/symbols-outline.nvim'
 vim.call('plug#end')
 
 require("keybinds")
@@ -22,6 +22,7 @@ require("keybinds-win")
 -- require("keybinds-mac")
 require("commands")
 
+require("symbols-outline").setup()
 require("lsps")
 require("aesthetic")
 require("conf_treesitter")
