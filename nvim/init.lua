@@ -13,18 +13,19 @@ Plug 'https://github.com/neovim/nvim-lspconfig.git'
 Plug ('ms-jpq/coq_nvim', {branch = 'coq'})
 Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
 Plug ('yaegassy/coc-htmldjango', {['do'] = 'yarn install --frozen-lockfile'})
-Plug 'simrat39/symbols-outline.nvim'
+Plug 'stevearc/aerial.nvim'
+
 vim.call('plug#end')
 
 require("keybinds")
 -- Keyboard layout dependent
-require("keybinds-win")
--- require("keybinds-mac")
+-- require("keybinds-win")
+require("keybinds-mac")
 require("commands")
 
-require("symbols-outline").setup()
+require("conf_treesitter")
 require("lsps")
 require("aesthetic")
-require("conf_treesitter")
 require("conf_telescope")
+require("aerial").setup()
 

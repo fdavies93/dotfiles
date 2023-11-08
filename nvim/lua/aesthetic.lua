@@ -7,6 +7,8 @@ vim.opt.cursorline = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
+vim.opt.foldmethod = "expr"
+
 vim.g.mapleader = " "
 
 -- Setup bufferline 
