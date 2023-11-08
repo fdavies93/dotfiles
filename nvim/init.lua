@@ -1,3 +1,4 @@
+local uv = vim.uv
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
@@ -19,8 +20,10 @@ vim.call('plug#end')
 
 require("keybinds")
 -- Keyboard layout dependent
--- require("keybinds-win")
-require("keybinds-mac")
+local uname = uv.os_uname()
+
+if uname.sysname == "Darwin" then require("keybinds-mac") else require("keybinds-win") end
+
 require("commands")
 
 require("conf_treesitter")
