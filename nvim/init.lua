@@ -1,4 +1,8 @@
 local uv = vim.uv
+if uv == nil then
+	uv = vim.loop
+end
+
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
