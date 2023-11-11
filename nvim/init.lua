@@ -34,5 +34,4 @@ require("conf_treesitter")
 require("lsps")
 require("aesthetic")
 require("conf_telescope")
-require("aerial").setup()
-
+require("conf_aerial")
