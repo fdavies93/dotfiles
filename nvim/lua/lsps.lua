@@ -34,6 +34,7 @@ lspconfig.pylsp.setup {coq.lsp_ensure_capabilities()}
 lspconfig.tsserver.setup {coq.lsp_ensure_capabilities()}
 lspconfig.marksman.setup {coq.lsp_ensure_capabilities()}
 lspconfig.html.setup {coq.lsp_ensure_capabilities()}
+
 require('lspconfig').lua_ls.setup {
     on_init = function(client)
         local path = client.workspace_folders[1].name
@@ -56,5 +57,6 @@ require('lspconfig').lua_ls.setup {
         return true
     end
 }
+lspconfig.gopls.setup({coq.lsp_ensure_capabilities()})
 
 vim.cmd("COQnow --shut-up")
