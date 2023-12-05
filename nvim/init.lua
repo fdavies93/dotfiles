@@ -19,7 +19,7 @@ Plug ('ms-jpq/coq_nvim', {branch = 'coq'})
 Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
 Plug ('yaegassy/coc-htmldjango', {['do'] = 'yarn install --frozen-lockfile'})
 Plug 'stevearc/aerial.nvim'
-
+Plug 'nvim-tree/nvim-tree.lua'
 vim.call('plug#end')
 
 require("keybinds")
@@ -29,7 +29,7 @@ local uname = uv.os_uname()
 if uname.sysname == "Darwin" then require("keybinds-mac") else require("keybinds-win") end
 
 require("commands")
-
+require("nvim-tree").setup()
 require("conf_treesitter")
 require("lsps")
 require("aesthetic")
