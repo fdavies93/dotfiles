@@ -8,6 +8,7 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 vim.opt.foldmethod = "expr"
+vim.opt.textwidth = 80
 
 vim.g.mapleader = " "
 
