@@ -18,6 +18,8 @@ vim.keymap.set('n', '<leader><left>', "<C-w><left>")
 vim.keymap.set('n', '<leader><up>', "<C-w><up>")
 vim.keymap.set('n', '<leader><down>', "<C-w><down>")
 vim.keymap.set('n', '<leader><right>', "<C-w><right>")
+vim.keymap.set('n', '<leader><down>', "<C-w><down>")
+vim.keymap.set('n', '<leader><up>', "<C-w><up>")
 vim.keymap.set('n', "<leader>x", "<Cmd><CR>")
 vim.keymap.set('n', 'U',"<C-R>")
 -- Kakoune-style x to select line
