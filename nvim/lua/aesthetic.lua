@@ -1,5 +1,5 @@
 -- Setup Dracula
-vim.cmd[[colorscheme monokai-pro-spectrum]]
+vim.cmd[[colorscheme catpuccin-machiatto]]
 
 -- Display options
 vim.opt.number = true

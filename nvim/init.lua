@@ -29,6 +29,7 @@ Plug 'bluz71/vim-nightfly-colors'
 Plug 'bluz71/vim-moonfly-colors'
 Plug ('rose-pine/neovim', {['as'] = 'rose-pine'})
 Plug 'loctvl842/monokai-pro.nvim'
+Plug 'kaiuri/nvim-juliana'
 
 vim.call('plug#end')
 
@@ -46,3 +47,4 @@ require("aesthetic")
 require("conf_telescope")
 require("conf_aerial")
 require("magma")
+require("tree-conf")
