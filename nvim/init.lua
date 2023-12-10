@@ -21,6 +21,14 @@ Plug ('yaegassy/coc-htmldjango', {['do'] = 'yarn install --frozen-lockfile'})
 Plug 'stevearc/aerial.nvim'
 Plug ('dccsillag/magma-nvim', { ['do'] = ':UpdateRemotePlugins' })
 Plug 'nvim-tree/nvim-tree.lua'
+Plug ('catppuccin/nvim', { ['as'] = 'catppuccin' })
+Plug 'folke/tokyonight.nvim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'rebelot/kanagawa.nvim'
+Plug 'bluz71/vim-nightfly-colors'
+Plug 'bluz71/vim-moonfly-colors'
+Plug ('rose-pine/neovim', {['as'] = 'rose-pine'})
+Plug 'loctvl842/monokai-pro.nvim'
 
 vim.call('plug#end')
 
