@@ -30,6 +30,7 @@ Plug 'bluz71/vim-moonfly-colors'
 Plug ('rose-pine/neovim', {['as'] = 'rose-pine'})
 Plug 'loctvl842/monokai-pro.nvim'
 Plug 'kaiuri/nvim-juliana'
+Plug 'zk-org/zk-nvim'
 
 vim.call('plug#end')
 
@@ -43,6 +44,7 @@ require("commands")
 require("nvim-tree").setup()
 require("conf_treesitter")
 require("lsps")
+require("zk").setup()
 require("aesthetic")
 require("conf_telescope")
 require("conf_aerial")

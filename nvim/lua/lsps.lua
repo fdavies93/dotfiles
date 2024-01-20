@@ -28,12 +28,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 local coq = require "coq"
+
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.pylsp.setup {coq.lsp_ensure_capabilities()}
 lspconfig.tsserver.setup {coq.lsp_ensure_capabilities()}
-lspconfig.marksman.setup {coq.lsp_ensure_capabilities()}
 lspconfig.html.setup {coq.lsp_ensure_capabilities()}
+
+vim.g.coq_settings = {
+	xdg = true
+}
 
 require('lspconfig').lua_ls.setup {
     on_init = function(client)
@@ -59,4 +63,3 @@ require('lspconfig').lua_ls.setup {
 }
 lspconfig.gopls.setup({coq.lsp_ensure_capabilities()})
 
-vim.cmd("COQnow --shut-up")

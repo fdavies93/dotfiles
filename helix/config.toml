@@ -1,4 +1,4 @@
-theme = "dracula"
+theme = "catppuccin_macchiato"
 [editor.indent-guides]
 render = true
 character = "┆"
