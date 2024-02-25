@@ -76,6 +76,10 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  i18n.inputMethod.enabled = "ibus";
+  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+
   services.mpd.extraConfig = ''
     audio_output {
       type "pipewire"
@@ -100,6 +104,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  # Enable cuda
+  nixpkgs.config.cudaSupport = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -142,7 +148,19 @@
      grimblast
      calibre
      zk
-  ]; 
+     gimp-with-plugins
+     corefonts
+     vistafonts
+     inkscape-with-extensions
+     libsForQt5.kdenlive
+     ffmpeg_5-full
+     lua-language-server 
+     libreoffice
+     zlib
+     obs-studio
+     p7zip
+     tilix
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -160,6 +178,8 @@
     nerdfonts
     font-awesome
   ];
+
+  
 
   programs.neovim = {
     enable = true;

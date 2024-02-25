@@ -3,6 +3,9 @@ theme = "catppuccin_macchiato"
 render = true
 character = "┆"
 skip-levels = 1
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
 [editor.soft-wrap]
 enable = true
 wrap-at-text-width = true

@@ -14,11 +14,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug ('nvim-telescope/telescope.nvim', { tag = '0.1.4' })
 Plug ('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug 'https://tpope.io/vim/commentary.git'
-Plug 'https://github.com/neovim/nvim-lspconfig.git'
-Plug ('ms-jpq/coq_nvim', {branch = 'coq'})
-Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
 Plug ('yaegassy/coc-htmldjango', {['do'] = 'yarn install --frozen-lockfile'})
-Plug 'stevearc/aerial.nvim'
 Plug ('dccsillag/magma-nvim', { ['do'] = ':UpdateRemotePlugins' })
 Plug 'nvim-tree/nvim-tree.lua'
 Plug ('catppuccin/nvim', { ['as'] = 'catppuccin' })
@@ -31,7 +27,10 @@ Plug ('rose-pine/neovim', {['as'] = 'rose-pine'})
 Plug 'loctvl842/monokai-pro.nvim'
 Plug 'kaiuri/nvim-juliana'
 Plug 'zk-org/zk-nvim'
-
+Plug 'sbdchd/neoformat'
+Plug 'neovim/nvim-lspconfig'
+Plug 'stevearc/aerial.nvim'
+Plug ('neoclide/coc.nvim', {branch = 'release'})
 vim.call('plug#end')
 
 require("keybinds")
@@ -40,6 +39,7 @@ local uname = uv.os_uname()
 
 if uname.sysname == "Darwin" then require("keybinds-mac") else require("keybinds-win") end
 
+vim.g.neoformat_try_node_exe = 1
 require("commands")
 require("nvim-tree").setup()
 require("conf_treesitter")
@@ -50,3 +50,4 @@ require("conf_telescope")
 require("conf_aerial")
 require("magma")
 require("tree-conf")
+require("coc-config")
