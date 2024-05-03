@@ -1,7 +1,6 @@
 [[language]]
 name = "markdown"
 formatter = { command = "mdformat", args=["-"] }
-text-width = 200
 
 [[language]]
 name = "python"
