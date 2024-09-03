@@ -1,4 +1,8 @@
-theme = "kanagawa"
+theme = "tokyonight"
+[editor]
+auto-pairs = false
+bufferline = "multiple"
+rulers = [ 80, 100 ]
 [editor.indent-guides]
 render = true
 character = "┆"
@@ -9,9 +13,6 @@ normal = "block"
 [editor.soft-wrap]
 enable = true
 wrap-at-text-width = true
-[editor]
-auto-pairs = false
-bufferline = "multiple"
 [keys.normal]
 A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]

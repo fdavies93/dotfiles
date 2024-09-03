@@ -1,6 +1,9 @@
 [[language]]
 name = "markdown"
-formatter = { command = "mdformat", args=["-"] }
+formatter = { command = "mdformat", args=["-", "--number", "--wrap", "80"] }
+language-servers = ["markdown-oxide"]
+auto-format = false
+text-width = 80
 
 [[language]]
 name = "python"
