@@ -97,13 +97,11 @@ vim.g.have_nerd_font = true
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
-
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
-
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
@@ -256,6 +254,22 @@ require("lazy").setup({
 		},
 	},
 
+	-- Adds session manager.
+	{
+		"rmagatti/auto-session",
+		lazy = false,
+		dependencies = {
+			"nvim-telescope/telescope.nvim", -- Only needed if you want to use session lens
+		},
+
+		---enables autocomplete for opts
+		---@module "auto-session"
+		---@type AutoSession.Config
+		opts = {
+			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+			-- log_level = 'debug',
+		},
+	},
 	{
 		"romgrk/barbar.nvim",
 		dependencies = {
@@ -272,6 +286,13 @@ require("lazy").setup({
 			-- …etc.
 		},
 		version = "^1.0.0", -- optional: only update when a new 1.x version is released
+	},
+
+	{
+		"andrewferrier/wrapping.nvim",
+		config = function()
+			require("wrapping").setup()
+		end,
 	},
 
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
