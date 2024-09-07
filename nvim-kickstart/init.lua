@@ -101,7 +101,7 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
@@ -164,6 +164,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+-- Helix-style line select
+vim.keymap.set("n", "x", "^v$")
+vim.keymap.set("v", "x", "j")
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -278,6 +282,9 @@ require("lazy").setup({
 		},
 		init = function()
 			vim.g.barbar_auto_setup = false
+			-- Helix-style goto buffer
+			vim.keymap.set("n", "gn", "<Cmd>BufferNext<CR>", { desc = "[G]oto [N]ext Buffer" })
+			vim.keymap.set("n", "gp", "<Cmd>BufferPrevious<CR>", { desc = "[G]oto [P]revious Buffer" })
 		end,
 		opts = {
 			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
