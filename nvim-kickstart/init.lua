@@ -174,6 +174,9 @@ vim.keymap.set("v", "x", "j")
 vim.keymap.set("n", ">", ">$")
 vim.keymap.set("n", "<", "<$")
 
+-- Redo with U
+vim.keymap.set("n", "U", "<C-r>")
+
 -- Goto end of FILE with ge
 vim.keymap.set("n", "ge", "G", { desc = "[G]oto [E]nd of file" })
 
