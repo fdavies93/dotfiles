@@ -35,7 +35,7 @@ local plugins = {
   require("plugins.lsps"),        -- can be broken down further
   require("plugins.nvim-cmp"),
   require("plugins.nvim-treesitter"),
-
+  require("plugins.conform"),
   -- mainly for editing text
   "folke/zen-mode.nvim",
   require("plugins.journal"),
