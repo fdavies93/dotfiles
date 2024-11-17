@@ -40,9 +40,10 @@ local plugins = {
   -- mainly for editing text
   "folke/zen-mode.nvim",
   require("plugins.journal"),
-  -- require("plugins.markview"),
-  require("plugins.glow"),
+  -- require("plugins.markdown-preview"), -- broken
+  -- require("plugins.markview"), -- flaky
   require("plugins.wrapping"),
+  require("plugins.render-markdown"),
 }
 
 -- Merge plugin groups with plugins specified individually
@@ -77,6 +78,6 @@ require("lazy").setup(plugins, ui)
 
 vim.o.termguicolors = true
 vim.cmd.colorscheme("tokyonight-night")
-
+vim.cmd.hi 'Comment gui=none'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
