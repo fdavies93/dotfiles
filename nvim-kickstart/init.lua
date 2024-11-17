@@ -20,6 +20,7 @@ local plugins = {
   require("plugins.lualine"),      -- statusline
   require("plugins.auto-session"), -- session manager
   require("plugins.which-key"),    -- show key mappings
+
   -- telescope - should be modularised more
   require("plugins.telescope"),
   require("plugins.telescope-file-browser"),
@@ -73,6 +74,9 @@ local ui = {
   },
 }
 require("lazy").setup(plugins, ui)
+
+vim.o.termguicolors = true
+vim.cmd.colorscheme("tokyonight-night")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
