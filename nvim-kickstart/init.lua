@@ -16,10 +16,10 @@ local plugins = {
   "tpope/vim-sleuth", -- autosets buffer options
 
   -- ui enhancements
-  require("plugins.barbar"), -- tabs and buffer management
-  require("plugins.lualine"), -- statusline
-  require("plugins.auto-session"), -- session manager 
-  require("plugins.which-key"), -- show key mappings
+  require("plugins.barbar"),       -- tabs and buffer management
+  require("plugins.lualine"),      -- statusline
+  require("plugins.auto-session"), -- session manager
+  require("plugins.which-key"),    -- show key mappings
   -- telescope - should be modularised more
   require("plugins.telescope"),
   require("plugins.telescope-file-browser"),
@@ -32,14 +32,15 @@ local plugins = {
   require("plugins.git-blame"),
 
   -- lsp / completions
-  require("plugins.lsps"),        -- can be broken down further
+  require("plugins.lsps"), -- can be broken down further
   require("plugins.nvim-cmp"),
   require("plugins.nvim-treesitter"),
   require("plugins.conform"),
   -- mainly for editing text
   "folke/zen-mode.nvim",
   require("plugins.journal"),
-  require("plugins.markview"),
+  -- require("plugins.markview"),
+  require("plugins.glow"),
   require("plugins.wrapping"),
 }
 
