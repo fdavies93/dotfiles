@@ -6,4 +6,5 @@ return {
   require("plugins.themes.monokai-pro"),
   require("plugins.themes.sonokai"),
   require("plugins.themes.onedark"),
+  require("plugins.themes.kanagawa-paper"),
 }

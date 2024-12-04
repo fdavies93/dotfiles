@@ -7,11 +7,11 @@ return {
 
       journal = {
         format = 'daily/%Y-%m-%d',
-        template = '# %Y-%m-%d\n\n## Notes\n\n## Events',
+        template = '# %A, %B %d\n\n## Notes\n\n## Events',
         entries = {
           day = {
             format = 'daily/%Y-%m-%d',
-            template = '# %Y-%m-%d\n\n## Notes\n\n## Events',
+            template = '# %A, %B %d\n\n## Notes\n\n## Events',
             frequency = { day = 1 },
           },
           week = {

@@ -37,6 +37,8 @@ local plugins = {
   require("plugins.nvim-cmp"),
   require("plugins.nvim-treesitter"),
   require("plugins.conform"),
+  -- better comments
+  require("plugins.todo-comments"),
   -- mainly for editing text
   "folke/zen-mode.nvim",
   require("plugins.journal"),
@@ -44,6 +46,8 @@ local plugins = {
   -- require("plugins.markview"), -- flaky
   require("plugins.wrapping"),
   require("plugins.render-markdown"),
+  "mattn/calendar-vim",
+  "jghauser/follow-md-links.nvim",
 }
 
 -- Merge plugin groups with plugins specified individually
