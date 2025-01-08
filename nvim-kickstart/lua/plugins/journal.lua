@@ -2,7 +2,7 @@ return {
   "jakobkhansen/journal.nvim",
   config = function()
     require("journal").setup({
-      root = '~/notes/journal',
+      root = '~/notes/journal/2025',
       date_format = '%Y-%m-%d',
 
       journal = {
@@ -16,7 +16,7 @@ return {
           },
           week = {
             format = 'weekly/%Y-week-%W',
-            template = '# %Y Week %W\n\n## Notes\n\n## Daily',
+            template = '# %Y Week %W\n\n## Notes\n\n',
             frequency = { day = 7 },
             date_modifier = "monday",
           }

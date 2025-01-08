@@ -48,6 +48,12 @@ local plugins = {
   require("plugins.render-markdown"),
   "mattn/calendar-vim",
   "jghauser/follow-md-links.nvim",
+  {
+    dir = "~/code/nvim-plugins/daily-notes.nvim",
+    opts = {
+      root = "~/notes/journal/2025",
+    }
+  },
 }
 
 -- Merge plugin groups with plugins specified individually
@@ -83,5 +89,9 @@ require("lazy").setup(plugins, ui)
 vim.o.termguicolors = true
 vim.cmd.colorscheme("tokyonight-night")
 vim.cmd.hi 'Comment gui=none'
+
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldlevel = 99
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
