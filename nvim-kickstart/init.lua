@@ -51,7 +51,12 @@ local plugins = {
   {
     dir = "~/code/nvim-plugins/daily-notes.nvim",
     opts = {
-      root = "~/notes/journal/2025",
+      writing = {
+        root = "~/notes/journal/2025",
+        day = {
+          template = "# %A, %B %d %Y\n\n## Notes\n\n## Tasks\n\n## Timebox"
+        }
+      }
     }
   },
 }
