@@ -51,6 +51,9 @@ local plugins = {
   {
     dir = "~/code/nvim-plugins/daily-notes.nvim",
     opts = {
+      parsing = {
+        week_starts = "monday"
+      },
       writing = {
         root = "~/notes/journal/2025",
         day = {
