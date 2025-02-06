@@ -16,7 +16,7 @@ local plugins = {
   "tpope/vim-sleuth", -- autosets buffer options
 
   -- ui enhancements
-  require("plugins.barbar"),       -- tabs and buffer management
+  "moll/vim-bbye",
   require("plugins.lualine"),      -- statusline
   require("plugins.auto-session"), -- session manager
   require("plugins.which-key"),    -- show key mappings

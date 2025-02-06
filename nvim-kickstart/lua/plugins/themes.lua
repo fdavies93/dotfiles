@@ -7,4 +7,5 @@ return {
   require("plugins.themes.sonokai"),
   require("plugins.themes.onedark"),
   require("plugins.themes.kanagawa-paper"),
+  require("plugins.themes.oldworld"),
 }
