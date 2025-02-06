@@ -38,15 +38,15 @@ local plugins = {
   require("plugins.nvim-treesitter"),
   require("plugins.conform"),
   -- better comments
-  require("plugins.todo-comments"),
+  -- require("plugins.todo-comments"),
   -- mainly for editing text
   "folke/zen-mode.nvim",
-  require("plugins.journal"),
+  -- require("plugins.journal"),
   -- require("plugins.markdown-preview"), -- broken
   -- require("plugins.markview"), -- flaky
   require("plugins.wrapping"),
   require("plugins.render-markdown"),
-  "mattn/calendar-vim",
+  -- "mattn/calendar-vim",
   "jghauser/follow-md-links.nvim",
   {
     dir = "~/code/nvim-plugins/daily-notes.nvim",
@@ -94,10 +94,11 @@ local ui = {
 }
 require("lazy").setup(plugins, ui)
 
-vim.o.termguicolors = true
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("oxocarbon")
 vim.cmd.hi 'Comment gui=none'
 
+vim.o.background = "dark"
+vim.o.termguicolors = true
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.o.foldlevel = 99

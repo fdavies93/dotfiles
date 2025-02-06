@@ -8,4 +8,14 @@ return {
   require("plugins.themes.onedark"),
   require("plugins.themes.kanagawa-paper"),
   require("plugins.themes.oldworld"),
+  require("plugins.themes.oxocarbon"),
+  { "rktjmp/lush.nvim" },
+  { "metalelf0/jellybeans-nvim" },
+  { "EdenEast/nightfox.nvim" },
+  { "akinsho/horizon.nvim",     version = "*" },
+  {
+    "water-sucks/darkrose.nvim",
+    lazy = false,
+    priority = 1000,
+  }
 }
