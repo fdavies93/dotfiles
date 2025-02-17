@@ -2,7 +2,7 @@ return {
   "jakobkhansen/journal.nvim",
   config = function()
     require("journal").setup({
-      root = '~/notes/journal',
+      root = '~/notes/journal/2025',
       date_format = '%Y-%m-%d',
 
       journal = {

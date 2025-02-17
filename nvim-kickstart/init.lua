@@ -16,7 +16,7 @@ local plugins = {
   "tpope/vim-sleuth", -- autosets buffer options
 
   -- ui enhancements
-  require("plugins.barbar"),       -- tabs and buffer management
+  "moll/vim-bbye",
   require("plugins.lualine"),      -- statusline
   require("plugins.auto-session"), -- session manager
   require("plugins.which-key"),    -- show key mappings
@@ -38,7 +38,7 @@ local plugins = {
   require("plugins.nvim-treesitter"),
   require("plugins.conform"),
   -- better comments
-  require("plugins.todo-comments"),
+  -- require("plugins.todo-comments"),
   -- mainly for editing text
   "folke/zen-mode.nvim",
   -- require("plugins.journal"),
@@ -46,7 +46,7 @@ local plugins = {
   -- require("plugins.markview"), -- flaky
   require("plugins.wrapping"),
   require("plugins.render-markdown"),
-  "mattn/calendar-vim",
+  -- "mattn/calendar-vim",
   "jghauser/follow-md-links.nvim",
   {
     "fdavies93/daily-notes.nvim",
@@ -98,10 +98,11 @@ local ui = {
 }
 require("lazy").setup(plugins, ui)
 
-vim.o.termguicolors = true
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("oxocarbon")
 vim.cmd.hi 'Comment gui=none'
 
+vim.o.background = "dark"
+vim.o.termguicolors = true
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.o.foldlevel = 99

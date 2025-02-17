@@ -15,7 +15,6 @@ return {
             rendered = "󱎖",
             highlight = "RenderMarkdownUnchecked",
           }
-
         }
       }
     })
