@@ -41,13 +41,31 @@ local plugins = {
   require("plugins.todo-comments"),
   -- mainly for editing text
   "folke/zen-mode.nvim",
-  require("plugins.journal"),
+  -- require("plugins.journal"),
   -- require("plugins.markdown-preview"), -- broken
   -- require("plugins.markview"), -- flaky
   require("plugins.wrapping"),
   require("plugins.render-markdown"),
   "mattn/calendar-vim",
   "jghauser/follow-md-links.nvim",
+  {
+    "fdavies93/daily-notes.nvim",
+    opts = {
+      parsing = {
+        resolve_strategy = {
+          weekday = {
+            this = "period"
+          }
+        }
+      },
+      writing = {
+        root = "~/notes/journal",
+        day = {
+          template = "# %A, %B %d, %Y\n\n## Notes\n\n## Tasks\n\n## Timebox"
+        }
+      }
+    }
+  },
 }
 
 -- Merge plugin groups with plugins specified individually
@@ -83,5 +101,9 @@ require("lazy").setup(plugins, ui)
 vim.o.termguicolors = true
 vim.cmd.colorscheme("tokyonight-night")
 vim.cmd.hi 'Comment gui=none'
+
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldlevel = 99
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
