@@ -2,6 +2,11 @@ return {
   "MeanderingProgrammer/render-markdown.nvim",
   config = function()
     require("render-markdown").setup({
+      link = {
+        wiki = {
+          highlight = "RenderMarkdownLink"
+        }
+      },
       checkbox = {
         unchecked = {
           icon = "󰄰",
@@ -14,6 +19,11 @@ return {
             raw = "[/]",
             rendered = "󱎖",
             highlight = "RenderMarkdownUnchecked",
+          },
+          cancelled = {
+            raw = "[~]",
+            rendered = "",
+            scope_highlight = "@text.strike"
           }
         }
       }
