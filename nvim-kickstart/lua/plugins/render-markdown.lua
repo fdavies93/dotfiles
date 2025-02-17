@@ -14,6 +14,11 @@ return {
             raw = "[/]",
             rendered = "󱎖",
             highlight = "RenderMarkdownUnchecked",
+          },
+          cancelled = {
+            raw = "[~]",
+            rendered = "",
+            scope_highlight = "@text.strike"
           }
         }
       }
