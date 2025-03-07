@@ -17,11 +17,9 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 vim.opt.list = true
+vim.opt.expandtab = true
 
 require("config.lazy")
-require("config.mini")
-
-vim.keymap.set("n", "<leader>d", "<CMD>bdelete<CR>", { desc = "[D]elete buffer"})
 
 vim.cmd.colorscheme("oxocarbon")
 vim.o.background = "dark"
