@@ -12,10 +12,12 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.scrolloff = 10
 vim.opt.cursorline = true
+vim.opt.inccommand = "split"
+vim.opt.signcolumn = "yes"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.smarttab = true
+-- vim.opt.shiftwidth = 4
+-- vim.opt.smarttab = true
 vim.opt.list = true
 vim.opt.expandtab = true
 

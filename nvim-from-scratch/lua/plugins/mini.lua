@@ -7,7 +7,12 @@ return {
         require("mini.icons").setup()
         require("mini.extra").setup()
         require("mini.completion").setup()
-        require("mini.indentscope").setup()
+        require("mini.indentscope").setup({
+            draw = {
+                animation = require("mini.indentscope").gen_animation.none()
+            }
+        })
+        require('mini.notify').setup()
         require("config.mini-clue")
 
         vim.keymap.set("n", "<leader>fe", MiniExtra.pickers.explorer, { desc = "[F]ind [E]xplorer" })

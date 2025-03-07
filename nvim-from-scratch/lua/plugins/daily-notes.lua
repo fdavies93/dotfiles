@@ -1,10 +1,11 @@
 return {
-	'fdavies93/daily-notes.nvim', opts = {
+    'fdavies93/daily-notes.nvim',
+    opts = {
 
-      writing = {
-        root = "~/notes/journal/2025",
-        day = {
-          template = [=[
+        writing = {
+            root = "~/notes/journal/2025",
+            day = {
+                template = [=[
 # %A, [[%Y-%m|%B]] %d [[%Y]]
 
 [[%Y-week-%W|Week %W]]
@@ -18,20 +19,20 @@ return {
 | Time | Task |
 |------|------|
 ]=]
-        },
-        week = {
-          template = [=[
+            },
+            week = {
+                template = [=[
 # [[%Y-week-%W|Week %W, %Y]]
 
 Week beginning [[%Y-%m-%d]]
 ]=]
-        },
-        month = {
-          template = [=[
+            },
+            month = {
+                template = [=[
 # %B [[%Y]]
 ]=]
+            }
         }
-      }
     }
 
-	}
+}
