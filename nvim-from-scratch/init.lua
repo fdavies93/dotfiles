@@ -26,6 +26,7 @@ vim.keymap.set("n", "x", "^v$")
 vim.keymap.set("v", "x", "j")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.api.nvim_create_user_command("W", "w", {})
 
 require("config.lazy")
 

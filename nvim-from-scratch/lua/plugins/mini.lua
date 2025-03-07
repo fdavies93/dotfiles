@@ -15,31 +15,33 @@ return {
         require('mini.notify').setup()
         require("config.mini-clue")
 
-        vim.keymap.set("n", "<leader>fe", MiniExtra.pickers.explorer, { desc = "[F]ind [E]xplorer" })
-        vim.keymap.set("n", "<leader>ff", MiniPick.builtin.files, { desc = "[F]ind [F]iles" })
-        vim.keymap.set("n", "<leader>fb", MiniPick.builtin.buffers, { desc = "[F]ind [B]uffer" })
+        vim.keymap.set("n", "<leader>ff", MiniPick.builtin.files, { desc = "[f]ind [f]iles" })
+        vim.keymap.set("n", "<leader>fb", MiniPick.builtin.buffers, { desc = "[f]ind [b]uffer" })
         vim.keymap.set("n", "<leader><leader>", MiniPick.builtin.buffers, { desc = "Find Buffer" })
         vim.keymap.set("n", "<leader>/", MiniPick.builtin.grep, { desc = "Grep Directory" })
-        vim.keymap.set("n", "<leader>fh", MiniPick.builtin.help, { desc = "[F]ind [h]elp" })
+        vim.keymap.set("n", "<leader>fh", MiniPick.builtin.help, { desc = "[f]ind [h]elp" })
 
-        vim.keymap.set("n", "<leader>fH", MiniExtra.pickers.hl_groups, { desc = "[F]ind [H]ighlights" })
+        vim.keymap.set("n", "<leader>fH", MiniExtra.pickers.hl_groups, { desc = "[f]ind [H]ighlights" })
 
         vim.keymap.set("n", "<leader>fn", function()
             MiniPick.builtin.files(nil, { source = { cwd = '~/.config/nvim' } })
-        end, { desc = "[F]ind [N]vim Config" })
+        end, { desc = "[f]ind [n]vim Config" })
+
+        vim.keymap.set("n", "fs", function()
+            MiniExtra.pickers.lsp({ scope = "document_symbol" })
+        end
+        , { desc = "[f]ind [s]ymbol" })
+
 
         vim.keymap.set("n", "gd", function()
             MiniExtra.pickers.lsp({ scope = "definition" })
         end
-        , { desc = "[G]oto [D]efinition" })
+        , { desc = "[g]oto [d]efinition" })
 
         vim.keymap.set("n", "gr", function()
             MiniExtra.pickers.lsp({ scope = "references" })
         end
-        , { desc = "[G]oto [R]eferences" })
-
-
-        -- vim.keymap.set("n", "gr", MiniExtra.pickers.lsp({ scope = "references" }), { desc = "[G]oto [R]eferences" })
+        , { desc = "[g]oto [r]eferences" })
 
         -- Setup key mappings for completions
         local imap_expr = function(lhs, rhs)
