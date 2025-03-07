@@ -16,10 +16,16 @@ vim.opt.inccommand = "split"
 vim.opt.signcolumn = "yes"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
--- vim.opt.shiftwidth = 4
--- vim.opt.smarttab = true
+vim.o.showtabline = 0
 vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.expandtab = true
+vim.opt.clipboard = "unnamedplus"
+
+vim.keymap.set("n", "x", "^v$")
+vim.keymap.set("v", "x", "j")
+vim.keymap.set("n", "U", "<C-r>")
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 require("config.lazy")
 

@@ -4,6 +4,9 @@ return {
         local lspconfig = require("lspconfig")
         lspconfig.markdown_oxide.setup({})
         lspconfig.clangd.setup({})
+        lspconfig.pyright.setup({})
+        lspconfig.pylsp.setup({})
+        lspconfig.html.setup({})
         lspconfig.lua_ls.setup(
             {
                 on_init = function(client)
