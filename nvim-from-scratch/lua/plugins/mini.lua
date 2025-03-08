@@ -6,7 +6,11 @@ return {
         require("mini.statusline").setup()
         require("mini.icons").setup()
         require("mini.extra").setup()
-        require("mini.completion").setup()
+        require("mini.completion").setup({
+            lsp_completion = {
+                source_fuc = 'omnifunc'
+            }
+        })
         require("mini.indentscope").setup({
             draw = {
                 animation = require("mini.indentscope").gen_animation.none()
@@ -14,6 +18,8 @@ return {
         })
         require('mini.notify').setup()
         require("config.mini-clue")
+
+        MiniIcons.tweak_lsp_kind("prepend")
 
         vim.keymap.set("n", "<leader>ff", MiniPick.builtin.files, { desc = "[f]ind [f]iles" })
         vim.keymap.set("n", "<leader>fb", MiniPick.builtin.buffers, { desc = "[f]ind [b]uffer" })
