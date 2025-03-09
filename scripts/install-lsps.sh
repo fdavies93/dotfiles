@@ -65,6 +65,20 @@ if [ $LLS_EXIT_CODE -ne 0 ]; then
         fi
 fi
 
+# ripgrep is needed for Mini-Pick to function sensibly
+which rg
+RG_EXIT_CODE=$?
+
+if [ $RG_EXIT_CODE -ne 0 ]; then
+        if [ $DISTRO_ID == "arch" ]; then
+                sudo pacman -S ripgrep
+        elif [ $DISTRO_ID == "ubuntu" ]; then
+                sudo apt install ripgrep
+        else
+                echo "Couldn't install ripgrep"
+        fi
+fi
+
 # Install pyright + python-language-server
 npm install -g pyright
 pipx install "python-lsp-server[all]"
