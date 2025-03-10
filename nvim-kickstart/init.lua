@@ -42,56 +42,21 @@ local plugins = {
   -- mainly for editing text
   "folke/zen-mode.nvim",
   -- require("plugins.journal"),
-  -- require("plugins.markdown-preview"), -- broken
   -- require("plugins.markview"), -- flaky
   require("plugins.wrapping"),
   require("plugins.render-markdown"),
   -- "mattn/calendar-vim",
   "jghauser/follow-md-links.nvim",
+  require("plugins.daily-notes"),
+  -- require("plugins.markdown-preview"),
+  require("plugins.emoji"),
   {
-    "fdavies93/daily-notes.nvim",
-    opts = {
-      parsing = {
-        resolve_strategy = {
-          weekday = {
-            this = "period"
-          }
-        }
-      },
-      writing = {
-        root = "~/notes/journal",
-        day = {
-          template = [=[
-# %A, [[%Y-%m|%B]] %d [[%Y]]
-
-[[%Y-week-%W|Week %W]]
-
-## Notes
-
-## Tasks
-
-## Timebox
-
-| Time | Task |
-|------|------|
-]=]
-        },
-        week = {
-          template = [=[
-# [[%Y-week-%W|Week %W, %Y]]
-
-Week beginning [[%Y-%m-%d]]
-]=]
-        },
-        month = {
-          template = [=[
-# %B [[%Y]]
-]=]
-        }
-      }
-    }
-  },
-  require("plugins.emoji")
+    'brianhuster/live-preview.nvim',
+    dependencies = {
+      -- You can choose one of the following pickers
+      'nvim-telescope/telescope.nvim',
+    },
+  }
 }
 
 -- Merge plugin groups with plugins specified individually

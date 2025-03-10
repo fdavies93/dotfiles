@@ -23,7 +23,7 @@ return {
           cancelled = {
             raw = "[~]",
             rendered = "",
-            scope_highlight = "@text.strike"
+            scope_highlight = "Comment"
           }
         }
       }
