@@ -56,7 +56,8 @@ local plugins = {
       -- You can choose one of the following pickers
       'nvim-telescope/telescope.nvim',
     },
-  }
+  },
+  require("plugins.emoji")
 }
 
 -- Merge plugin groups with plugins specified individually
