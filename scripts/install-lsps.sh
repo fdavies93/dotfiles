@@ -50,6 +50,7 @@ echo "Markdown-oxide is installed"
 
 # Install pipx
 which pipx
+
 PIPX_EXIT_CODE=$?
 if [ $PIPX_EXIT_CODE -ne 0 ]; then
         echo "No pipx install found, installing"
@@ -104,7 +105,6 @@ if [ $RG_EXIT_CODE -ne 0 ]; then
                 echo "Couldn't install ripgrep"
         fi
 fi
-
 # shellcheck powers bash-language-server
 which shellcheck
 SHELLCHECK_EXIT_CODE=$?
