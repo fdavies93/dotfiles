@@ -8,6 +8,7 @@ return {
         lspconfig.pylsp.setup({})
         lspconfig.html.setup({})
         lspconfig.bashls.setup({})
+        lspconfig.dockerls.setup({})
         lspconfig.lua_ls.setup(
             {
                 on_init = function(client)
