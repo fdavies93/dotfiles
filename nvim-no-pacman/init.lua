@@ -7,9 +7,9 @@ end
 -- stuff under the config directory
 vim.opt.rtp:prepend(script_path())
 
-plugins = vim.api.nvim_get_runtime_file("plugins/*", true)
+local plugins = vim.api.nvim_get_runtime_file("plugins/*", true)
 
-for i, v in ipairs(plugins) do
+for _, v in ipairs(plugins) do
          vim.opt.rtp:append(v)
 end
 
@@ -22,7 +22,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.opt.number = true
 vim.opt.mouse = "a"
-vim.opt.showmode = true
+vim.opt.showmode = false
 vim.o.colorcolumn = "80,100"
 vim.opt.undofile = true
 vim.opt.breakindent = true
@@ -46,10 +46,13 @@ vim.keymap.set("n", "x", "^v$")
 vim.keymap.set("v", "x", "j")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "L", vim.diagnostic.open_float)
 vim.api.nvim_create_user_command("W", "w", {})
 
 vim.o.background = "dark"
 vim.o.termguicolors = true
+
+
 
 require("oxocarbon")
 require("oil").setup()
