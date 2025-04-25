@@ -16,7 +16,7 @@ vim.lsp.config('lua_ls',
 				-- Make the server aware of Neovim runtime files
 				workspace = {
 					checkThirdParty = false,
-					ignoreDir = { "plugins", "mini.nvim" }, -- can disable this when working on plugin config
+					-- ignoreDir = { "plugins" }, -- can disable this when working on plugin config
 					library = {
 						vim.env.VIMRUNTIME
 						-- Depending on the usage, you might want to add additional paths here.
@@ -34,4 +34,4 @@ vim.lsp.config('lua_ls',
 	}
 )
 
--- vim.lsp.enable('lua_ls')
+vim.lsp.enable('lua_ls')
