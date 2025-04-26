@@ -50,14 +50,22 @@ vim.keymap.set("n", "L", vim.diagnostic.open_float)
 vim.api.nvim_create_user_command("W", "w", {})
 
 vim.o.background = "dark"
-vim.o.termguicolors = true
 
+require("config.lsps")
 
-
-require("oxocarbon")
-require("oil").setup()
-require("auto-session").setup()
-require("nvim-treesitter").setup()
+local treesitter = require("nvim-treesitter.configs")
+treesitter.setup({
+   ensure_installed = { "lua", "markdown", "markdown_inline" },
+   auto_install = true,
+   highlight = {
+      enable = true
+   },
+   additional_vim_regex_highlighting = false
+})
 
 require("config.mini")
-require("config.lsps")
+
+require("oil").setup()
+require("auto-session").setup()
+
+vim.cmd "colorscheme oxocarbon"

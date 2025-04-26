@@ -123,7 +123,6 @@ miniclue.setup({
   clues = {
     -- Enhance this by adding descriptions for <Leader> mapping groups
     { mode = "n", keys = "<Leader>f", desc = "[F]ind" },
-	{ mode = "n", keys = "<Leader>t", desc = "[T]oggle" },
 	miniclue.gen_clues.builtin_completion(),
        -- miniclue.gen_clues.g(),
        miniclue.gen_clues.marks(),
