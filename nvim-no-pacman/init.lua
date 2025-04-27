@@ -128,11 +128,18 @@ require("nvim-treesitter.configs").setup({
 require("config.mini")
 
 require("oil").setup()
+vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "[O]il"} )
+
 require("auto-session").setup()
 require("render-markdown").setup()
 
 require("nordic").setup({
    swap_backgrounds = true,
+   cursorline = { -- make it more prominent to adjust for low contrast between
+      -- cursorline and darker bg
+      blend = 0.95,
+      bold = true
+   }
 })
 
 -- this complements the helix line behaviour and helps with low-contrast

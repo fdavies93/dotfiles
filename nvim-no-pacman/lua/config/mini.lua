@@ -15,7 +15,6 @@ require("mini.indentscope").setup({
 require('mini.notify').setup()
 require('mini.bufremove').setup()
 
--- Same usage as bbye.vim
 vim.api.nvim_create_user_command("Bdelete",function() MiniBufremove.delete(0) end, {})
 
 local bufDeleteOthers = function()
