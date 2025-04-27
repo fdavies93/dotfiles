@@ -13,6 +13,30 @@ require("mini.indentscope").setup({
    }
 })
 require('mini.notify').setup()
+require('mini.bufremove').setup()
+
+-- Same usage as bbye.vim
+vim.api.nvim_create_user_command("Bdelete",function() MiniBufremove.delete(0) end, {})
+
+local bufDeleteOthers = function()
+   local bufs=vim.api.nvim_list_bufs()
+   local current_buf=vim.api.nvim_get_current_buf()
+   for _,i in ipairs(bufs) do
+       if i~=current_buf then
+	    vim.api.nvim_buf_delete(i, {})
+       end
+   end
+end
+
+local bufDeleteAll = function()
+   local bufs=vim.api.nvim_list_bufs()
+   for _,i in ipairs(bufs) do
+        vim.api.nvim_buf_delete(i, {})
+   end
+end
+
+vim.api.nvim_create_user_command("BdeleteOthers", bufDeleteOthers, {})
+vim.api.nvim_create_user_command("BdeleteAll", bufDeleteAll, {})
 
 MiniIcons.tweak_lsp_kind("prepend")
 

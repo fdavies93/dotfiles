@@ -25,3 +25,9 @@
 [submodule "nvim-no-pacman/plugins/oxocarbon"]
 	path = nvim-no-pacman/plugins/oxocarbon
 	url = git@github.com:nyoom-engineering/oxocarbon.nvim.git
+[submodule "nvim-no-pacman/plugins/nordic"]
+	path = nvim-no-pacman/plugins/nordic
+	url = git@github.com:AlexvZyl/nordic.nvim.git
+[submodule "nvim-no-pacman/plugins/full_visual_line"]
+	path = nvim-no-pacman/plugins/full_visual_line
+	url = git@github.com:0xAdk/full_visual_line.nvim.git
