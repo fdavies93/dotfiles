@@ -5,11 +5,7 @@ return {
 	dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	lazy = false,
 	config = function()
-		require("oil").setup({
-			keymaps = {
-				["<Esc>"] = { callback = "actions.close", mode = "n" }
-			}
-		})
-		vim.keymap.set("n", "<leader>o", "<CMD>Oil --float<CR>", { desc = "[O]il" })
+		require("oil").setup({})
+		vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "[O]il" })
 	end
 }

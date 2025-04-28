@@ -33,7 +33,7 @@ return {
             MiniPick.builtin.files(nil, { source = { cwd = '~/.config/nvim' } })
         end, { desc = "[f]ind [n]vim Config" })
 
-        vim.keymap.set("n", "fs", function()
+        vim.keymap.set("n", "<leader>fs", function()
             MiniExtra.pickers.lsp({ scope = "document_symbol" })
         end
         , { desc = "[f]ind [s]ymbol" })
