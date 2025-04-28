@@ -2,14 +2,40 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
         local lspconfig = require("lspconfig")
-        lspconfig.markdown_oxide.setup({})
-        lspconfig.clangd.setup({})
-        lspconfig.pyright.setup({})
-        lspconfig.pylsp.setup({})
-        lspconfig.html.setup({})
-        lspconfig.bashls.setup({})
+
+        local on_attach = function(client, bufnr)
+            vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>r', '<CMD>lua vim.lsp.buf.rename()<CR>',
+                { desc = '[R]ename' })
+        end
+
+        vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+            pattern = "*.gitlab-ci*.{yml,yaml}",
+            callback = function()
+                vim.bo.filetype = "yaml.gitlab"
+            end,
+        })
+        -- lspconfig.markdown_oxide.setup({
+        --     on_attach = on_attach
+        -- })
+        -- lspconfig.clangd.setup({
+        --     on_attach = on_attach
+        -- })
+        lspconfig.pyright.setup({
+            on_attach = on_attach
+        })
+        -- lspconfig.pylsp.setup({})
+        lspconfig.html.setup({
+            on_attach = on_attach
+        })
+        lspconfig.bashls.setup({
+            on_attach = on_attach
+        })
+        lspconfig.dockerls.setup({
+            on_attach = on_attach
+        })
         lspconfig.lua_ls.setup(
             {
+                on_attach = on_attach,
                 on_init = function(client)
                     if client.workspace_folders then
                         local path = client.workspace_folders[1].name

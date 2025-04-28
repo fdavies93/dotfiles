@@ -42,47 +42,20 @@ local plugins = {
   -- mainly for editing text
   "folke/zen-mode.nvim",
   -- require("plugins.journal"),
-  -- require("plugins.markdown-preview"), -- broken
   -- require("plugins.markview"), -- flaky
   require("plugins.wrapping"),
   require("plugins.render-markdown"),
   -- "mattn/calendar-vim",
   "jghauser/follow-md-links.nvim",
+  require("plugins.daily-notes"),
+  -- require("plugins.markdown-preview"),
+  require("plugins.emoji"),
   {
-    dir = "~/code/nvim-plugins/daily-notes.nvim",
-    opts = {
-      writing = {
-        root = "~/notes/journal/2025",
-        day = {
-          template = [=[
-# %A, [[%Y-%m|%B]] %d [[%Y]]
-
-[[%Y-week-%W|Week %W]]
-
-## Notes
-
-## Tasks
-
-## Timebox
-
-| Time | Task |
-|------|------|
-]=]
-        },
-        week = {
-          template = [=[
-# [[%Y-week-%W|Week %W, %Y]]
-
-Week beginning [[%Y-%m-%d]]
-]=]
-        },
-        month = {
-          template = [=[
-# %B [[%Y]]
-]=]
-        }
-      }
-    }
+    'brianhuster/live-preview.nvim',
+    dependencies = {
+      -- You can choose one of the following pickers
+      'nvim-telescope/telescope.nvim',
+    },
   },
   require("plugins.emoji")
 }

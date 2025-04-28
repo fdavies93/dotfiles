@@ -22,8 +22,8 @@ return {
           },
           cancelled = {
             raw = "[~]",
-            rendered = "",
-            scope_highlight = "@text.strike"
+            rendered = "",
+            scope_highlight = "Comment"
           }
         }
       }

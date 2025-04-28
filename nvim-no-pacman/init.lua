@@ -14,6 +14,7 @@ end
 
 -- Add the root init.lua to runtimepath so we can actually find
 -- stuff under the config directory
+print(script_path())
 vim.opt.rtp:prepend(script_path())
 
 local plugins = vim.api.nvim_get_runtime_file("plugins/*", true)
@@ -43,7 +44,8 @@ local include = {
    "vim-sleuth",
    "nordic",
    "full_visual_line",
-   "nvim-lint"
+   "nvim-lint",
+   "conform"
 }
 
 local exclude = {}
@@ -117,6 +119,7 @@ vim.o.background = "dark"
 
 require("config.lsps")
 require("config.lint")
+require("config.format")
 
 require("nvim-treesitter.configs").setup({
    ensure_installed = { "lua", "markdown", "markdown_inline" },

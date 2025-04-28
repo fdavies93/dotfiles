@@ -21,12 +21,25 @@ vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.expandtab = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.ttimeoutlen = 100
 
+-- helix-style row selections
 vim.keymap.set("n", "x", "^v$")
 vim.keymap.set("v", "x", "j")
+-- redo with U
 vim.keymap.set("n", "U", "<C-r>")
+-- kill highlights on ESC
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+-- fix typos / slow key response for save
 vim.api.nvim_create_user_command("W", "w", {})
+-- open diagnostics (e.g. LSP errors) with L - works well with K for annotations
+vim.keymap.set("n", "L", vim.diagnostic.open_float)
+vim.diagnostic.config({
+        virtual_text = false
+})
+-- don't close visual mode after indent
+vim.keymap.set("v", "<", "<gv$")
+vim.keymap.set("v", ">", ">gv$")
 
 require("config.lazy")
 
