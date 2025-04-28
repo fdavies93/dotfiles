@@ -34,3 +34,6 @@
 [submodule "nvim-no-pacman/plugins/nvim-lint"]
 	path = nvim-no-pacman/plugins/nvim-lint
 	url = git@github.com:mfussenegger/nvim-lint.git
+[submodule "nvim-no-pacman/plugins/conform"]
+	path = nvim-no-pacman/plugins/conform
+	url = https://github.com/stevearc/conform.nvim.git
