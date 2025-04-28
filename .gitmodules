@@ -31,3 +31,6 @@
 [submodule "nvim-no-pacman/plugins/full_visual_line"]
 	path = nvim-no-pacman/plugins/full_visual_line
 	url = git@github.com:0xAdk/full_visual_line.nvim.git
+[submodule "nvim-no-pacman/plugins/nvim-lint"]
+	path = nvim-no-pacman/plugins/nvim-lint
+	url = git@github.com:mfussenegger/nvim-lint.git

@@ -1,4 +1,4 @@
-local setup_lsp_keybinds = function (bufnr)
+local setup_lsp_buffer_keybinds = function (bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "[R]ename symbol"  })
 end
 
@@ -34,7 +34,7 @@ vim.lsp.config('lua_ls',
         end,
 
         on_attach = function (client, bufnr)
-            setup_lsp_keybinds(bufnr)
+            setup_lsp_buffer_keybinds(bufnr)
         end,
 
         settings = {
@@ -47,7 +47,7 @@ vim.lsp.enable('lua_ls')
 
 vim.lsp.config('pyright', {
     on_attach = function (client, bufnr)
-        setup_lsp_keybinds(bufnr)
+        setup_lsp_buffer_keybinds(bufnr)
     end
 })
 

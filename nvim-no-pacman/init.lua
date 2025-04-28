@@ -42,7 +42,8 @@ local include = {
    "render-markdown",
    "vim-sleuth",
    "nordic",
-   "full_visual_line"
+   "full_visual_line",
+   "nvim-lint"
 }
 
 local exclude = {}
@@ -115,6 +116,7 @@ vim.api.nvim_create_user_command("W", "w", {})
 vim.o.background = "dark"
 
 require("config.lsps")
+require("config.lint")
 
 require("nvim-treesitter.configs").setup({
    ensure_installed = { "lua", "markdown", "markdown_inline" },
