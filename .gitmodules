@@ -1,0 +1,36 @@
+[submodule "nvim-no-pacman/plugins/auto-session"]
+	path = nvim-no-pacman/plugins/auto-session
+	url = git@github.com:rmagatti/auto-session.git
+[submodule "nvim-no-pacman/plugins/mini.nvim"]
+	path = nvim-no-pacman/plugins/mini.nvim
+	url = git@github.com:echasnovski/mini.nvim.git
+[submodule "nvim-no-pacman/plugins/nvim-lspconfig"]
+	path = nvim-no-pacman/plugins/nvim-lspconfig
+	url = git@github.com:neovim/nvim-lspconfig.git
+[submodule "nvim-no-pacman/plugins/oil.nvim"]
+	path = nvim-no-pacman/plugins/oil.nvim
+	url = git@github.com:stevearc/oil.nvim.git
+[submodule "nvim-no-pacman/plugins/vim-bbye"]
+	path = nvim-no-pacman/plugins/vim-bbye
+	url = git@github.com:moll/vim-bbye.git
+[submodule "nvim-no-pacman/plugins/vim-sleuth"]
+	path = nvim-no-pacman/plugins/vim-sleuth
+	url = git@github.com:tpope/vim-sleuth.git
+[submodule "nvim-no-pacman/plugins/nvim-treesitter"]
+	path = nvim-no-pacman/plugins/nvim-treesitter
+	url = git@github.com:nvim-treesitter/nvim-treesitter.git
+[submodule "nvim-no-pacman/plugins/render-markdown"]
+	path = nvim-no-pacman/plugins/render-markdown
+	url = git@github.com:MeanderingProgrammer/render-markdown.nvim.git
+[submodule "nvim-no-pacman/plugins/oxocarbon"]
+	path = nvim-no-pacman/plugins/oxocarbon
+	url = git@github.com:nyoom-engineering/oxocarbon.nvim.git
+[submodule "nvim-no-pacman/plugins/nordic"]
+	path = nvim-no-pacman/plugins/nordic
+	url = git@github.com:AlexvZyl/nordic.nvim.git
+[submodule "nvim-no-pacman/plugins/full_visual_line"]
+	path = nvim-no-pacman/plugins/full_visual_line
+	url = git@github.com:0xAdk/full_visual_line.nvim.git
+[submodule "nvim-no-pacman/plugins/nvim-lint"]
+	path = nvim-no-pacman/plugins/nvim-lint
+	url = git@github.com:mfussenegger/nvim-lint.git
