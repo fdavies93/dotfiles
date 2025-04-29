@@ -39,7 +39,11 @@ vim.api.nvim_create_user_command("BdeleteAll", bufDeleteAll, {})
 
 MiniIcons.tweak_lsp_kind("prepend")
 
-vim.keymap.set("n", "<leader>ff", MiniPick.builtin.files, { desc = "[f]ind [f]iles" })
+
+vim.keymap.set("n", "<leader>ff",
+	function() MiniPick.builtin.cli({ command = { "rg", "--files", "--hidden" } }) end,
+	{ desc = "[f]ind [f]iles" })
+-- vim.keymap.set("n", "<leader>ff", function() MiniPick.builtin.files({ tool = "rg" }) end, { desc = "[f]ind [f]iles" })
 vim.keymap.set("n", "<leader>fb", MiniPick.builtin.buffers, { desc = "[f]ind [b]uffer" })
 vim.keymap.set("n", "<leader><leader>", MiniPick.builtin.buffers, { desc = "Find Buffer" })
 vim.keymap.set("n", "<leader>/", MiniPick.builtin.grep, { desc = "Grep Directory" })
