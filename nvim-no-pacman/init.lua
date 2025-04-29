@@ -130,8 +130,6 @@ require("nvim-treesitter.configs").setup({
    additional_vim_regex_highlighting = false
 })
 
-require("config.mini")
-
 require("oil").setup()
 vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "[O]il"} )
 
@@ -151,4 +149,5 @@ require("nordic").setup({
 -- highlights like in nordic
 require("full_visual_line").setup()
 
+require("config.mini")
 vim.cmd.colorscheme("nordic")

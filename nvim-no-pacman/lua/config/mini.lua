@@ -68,10 +68,16 @@ vim.keymap.set("n", "gd", function()
 end
 , { desc = "[g]oto [d]efinition" })
 
-vim.keymap.set("n", "gr", function()
+
+vim.keymap.set("n", "gD", function()
+	MiniExtra.pickers.lsp({ scope = "declaration" })
+end
+, { desc = "[g]oto [D]eclaration" })
+
+vim.keymap.set("n", "gR", function()
 	MiniExtra.pickers.lsp({ scope = "references" })
 end
-, { desc = "[g]oto [r]eferences" })
+, { desc = "[g]oto [R]eferences" })
 
 -- Setup key mappings for completions
 local imap_expr = function(lhs, rhs)
