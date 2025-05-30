@@ -38,13 +38,14 @@ exec xrandr --output eDP --primary --mode 1920x1200 --pos 0x0 --rotate normal --
 
 exec_always feh --bg-scale --zoom fill ~/Pictures/wallpapers/retro_landscape_4k_hd_vaporwave.jpg
 
-exec polybar
+# reload polybar
+exec_always polybar-msg cmd quit
+exec_always polybar
 
 # Hide titlebar
 default_border pixel 2
 default_floating_border pixel 2
 gaps inner 10
-gaps outer 0
 smart_gaps on
 
 # Use pactl to adjust volume in PulseAudio.
