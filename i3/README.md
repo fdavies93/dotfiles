@@ -9,7 +9,4 @@
 - polybar
 - wezterm
 - xrandr
-
-## Optional
-
 - autorandr

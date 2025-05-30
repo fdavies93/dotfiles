@@ -34,7 +34,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-exec xrandr --output eDP --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI-A-0 --auto --mode 1920x1080 --pos 1920x0 --rotate normal
+exec_always autorandr --change
 
 exec_always feh --bg-scale --zoom fill ~/Pictures/wallpapers/retro_landscape_4k_hd_vaporwave.jpg
 
