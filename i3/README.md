@@ -10,3 +10,4 @@
 - wezterm
 - xrandr
 - autorandr
+- flameshot
