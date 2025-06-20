@@ -25,7 +25,7 @@ local plugins = vim.api.nvim_get_runtime_file("plugins/*", true)
 -- If you use load_all = false then you can vendor in packages and not
 -- bother to remove them, just remove them from the include list to disable.
 -- On the other hand, you need to maintain a list of plugins you want to
--- enable.
+-- enable. This is the default behaviour most programmers expect.
 
 -- If you use load_all = true then plugin folders that aren't explicitly
 -- excluded will always be loaded. This can cause unusual behaviour for
@@ -45,7 +45,8 @@ local include = {
    "nordic",
    "full_visual_line",
    "nvim-lint",
-   "conform"
+   "conform",
+   "todo-comments"
 }
 
 local exclude = {}
@@ -112,6 +113,12 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Built-in method to view diagnostics from LSPs
 vim.keymap.set("n", "L", vim.diagnostic.open_float)
 
+-- Remove default LSP keybinds
+pcall(vim.keymap.del, "n", "gra")
+pcall(vim.keymap.del, "n", "gri")
+pcall(vim.keymap.del, "n", "grn")
+pcall(vim.keymap.del, "n", "grr")
+
 -- Very helpful to correct for key bounce / typos
 vim.api.nvim_create_user_command("W", "w", {})
 
@@ -150,4 +157,6 @@ require("nordic").setup({
 require("full_visual_line").setup()
 
 require("config.mini")
+
+
 vim.cmd.colorscheme("nordic")
