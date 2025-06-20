@@ -5,7 +5,7 @@ end
 
 function get_stem(full_path)
    local parts = {}
-   for v in string.gmatch(full_path,"[^/]+")
+   for v in string.gmatch(full_path, "[^/]+")
    do
       table.insert(parts, v)
    end
@@ -28,7 +28,7 @@ local plugins = vim.api.nvim_get_runtime_file("plugins/*", true)
 -- enable.
 
 -- If you use load_all = true then plugin folders that aren't explicitly
--- excluded will always be loaded. This can cause unusual behaviour for 
+-- excluded will always be loaded. This can cause unusual behaviour for
 -- some plugins. This requires a more involved approach to managing package
 -- installs, but doesn't require you to maintain a list in nvim config.
 local load_all = false
@@ -131,7 +131,7 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("oil").setup()
-vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "[O]il"} )
+vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "[O]il" })
 
 require("auto-session").setup()
 require("render-markdown").setup()
