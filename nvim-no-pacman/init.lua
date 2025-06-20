@@ -113,6 +113,12 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Built-in method to view diagnostics from LSPs
 vim.keymap.set("n", "L", vim.diagnostic.open_float)
 
+-- Remove default LSP keybinds
+pcall(vim.keymap.del, "n", "gra")
+pcall(vim.keymap.del, "n", "gri")
+pcall(vim.keymap.del, "n", "grn")
+pcall(vim.keymap.del, "n", "grr")
+
 -- Very helpful to correct for key bounce / typos
 vim.api.nvim_create_user_command("W", "w", {})
 
@@ -152,4 +158,6 @@ require("full_visual_line").setup()
 require("todo-comments").setup()
 
 require("config.mini")
+
+
 vim.cmd.colorscheme("nordic")

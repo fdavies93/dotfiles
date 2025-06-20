@@ -74,10 +74,10 @@ vim.keymap.set("n", "gD", function()
 end
 , { desc = "[g]oto [D]eclaration" })
 
-vim.keymap.set("n", "gR", function()
+vim.keymap.set("n", "gr", function()
 	MiniExtra.pickers.lsp({ scope = "references" })
 end
-, { desc = "[g]oto [R]eferences" })
+, { desc = "[g]oto [r]eferences" })
 
 -- Setup key mappings for completions
 local imap_expr = function(lhs, rhs)
@@ -154,7 +154,6 @@ miniclue.setup({
 			width = 'auto'
 		},
 	},
-	-- TODO: blah blah blah
 
 	clues = {
 		-- Enhance this by adding descriptions for <Leader> mapping groups
