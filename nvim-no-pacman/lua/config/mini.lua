@@ -41,7 +41,7 @@ MiniIcons.tweak_lsp_kind("prepend")
 
 
 vim.keymap.set("n", "<leader>ff",
-	function() MiniPick.builtin.cli({ command = { "rg", "--files", "--hidden" } }) end,
+	function() MiniPick.builtin.cli({ command = { "rg", "--files", "--hidden", "--ignore-file=ignorefile" } }) end,
 	{ desc = "[f]ind [f]iles" })
 -- vim.keymap.set("n", "<leader>ff", function() MiniPick.builtin.files({ tool = "rg" }) end, { desc = "[f]ind [f]iles" })
 vim.keymap.set("n", "<leader>fb", MiniPick.builtin.buffers, { desc = "[f]ind [b]uffer" })
@@ -63,7 +63,7 @@ end
 , { desc = "[f]ind [s]ymbol" })
 
 vim.keymap.set("n", "fc", function()
-	MiniPick.builtin.cli({ command = { "rg", "--hidden", "TODO|FIXME|HACK|NOTE" } })
+	MiniPick.builtin.cli({ command = { "rg", "--hidden", "--line-number", "--trim", "TODO|FIXME|HACK|NOTE" } })
 end, { desc = "[f]ind [c]omment patterns" })
 
 vim.keymap.set("n", "gd", function()
