@@ -155,7 +155,6 @@ require("nordic").setup({
 -- this complements the helix line behaviour and helps with low-contrast
 -- highlights like in nordic
 require("full_visual_line").setup()
-require("todo-comments").setup()
 
 require("config.mini")
 

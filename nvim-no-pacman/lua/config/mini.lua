@@ -62,6 +62,9 @@ vim.keymap.set("n", "fs", function()
 end
 , { desc = "[f]ind [s]ymbol" })
 
+vim.keymap.set("n", "fc", function()
+	MiniPick.builtin.cli({ command = { "rg", "--hidden", "TODO|FIXME|HACK|NOTE" } })
+end, { desc = "[f]ind [c]omment patterns" })
 
 vim.keymap.set("n", "gd", function()
 	MiniExtra.pickers.lsp({ scope = "definition" })
@@ -164,5 +167,19 @@ miniclue.setup({
 		miniclue.gen_clues.registers(),
 		miniclue.gen_clues.windows(),
 		miniclue.gen_clues.z(),
+	},
+})
+
+local hipatterns = require('mini.hipatterns')
+hipatterns.setup({
+	highlighters = {
+		-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+		fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+		hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+		todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+		note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+
+		-- Highlight hex color strings (`#rrggbb`) using that color
+		hex_color = hipatterns.gen_highlighter.hex_color(),
 	},
 })
