@@ -40,3 +40,6 @@
 [submodule "nvim-no-pacman/plugins/todo-comments"]
 	path = nvim-no-pacman/plugins/todo-comments
 	url = git@github.com:folke/todo-comments.nvim.git
+[submodule "nvim-no-pacman/plugins/blame.nvim"]
+	path = nvim-no-pacman/plugins/blame.nvim
+	url = git@github.com:FabijanZulj/blame.nvim.git

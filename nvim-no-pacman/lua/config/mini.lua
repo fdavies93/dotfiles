@@ -187,8 +187,3 @@ hipatterns.setup({
 
 local git = require('mini.git')
 git.setup()
-
-vim.keymap.set('n', '<Leader>gb', function()
-	local buf_name = vim.api.nvim_buf_get_name(0)
-	vim.cmd(string.format("Git blame --pretty=oneline --date=relative -- %s", buf_name))
-end, { desc = "[g]it [b]lame" })
