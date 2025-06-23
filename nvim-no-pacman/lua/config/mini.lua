@@ -160,7 +160,8 @@ miniclue.setup({
 
 	clues = {
 		-- Enhance this by adding descriptions for <Leader> mapping groups
-		{ mode = "n", keys = "<Leader>f", desc = "[F]ind" },
+		{ mode = "n", keys = "<Leader>f", desc = "[f]ind" },
+		{ mode = "n", keys = "<Leader>g", desc = "[g]it" },
 		miniclue.gen_clues.builtin_completion(),
 		-- miniclue.gen_clues.g(),
 		miniclue.gen_clues.marks(),
@@ -183,3 +184,11 @@ hipatterns.setup({
 		hex_color = hipatterns.gen_highlighter.hex_color(),
 	},
 })
+
+local git = require('mini.git')
+git.setup()
+
+vim.keymap.set('n', '<Leader>gb', function()
+	local buf_name = vim.api.nvim_buf_get_name(0)
+	vim.cmd(string.format("Git blame --pretty=oneline --date=relative -- %s", buf_name))
+end, { desc = "[g]it [b]lame" })
