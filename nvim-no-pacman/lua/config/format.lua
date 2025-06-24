@@ -8,6 +8,8 @@ require("conform").setup({
     python = { "isort", "black" },
     -- prettier has a good balance between liberal rules and idiomatic syntax
     markdown = { "prettier" },
+    javascript = { "prettier", "eslint" },
+    typescript = { "prettier", "eslint" },
   },
   format_on_save = {
     -- suggested config in docs, but might need tweaking

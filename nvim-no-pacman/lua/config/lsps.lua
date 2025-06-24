@@ -44,6 +44,8 @@ vim.lsp.config('lua_ls',
     }
 )
 
+vim.lsp.config('eslint', {})
+
 vim.lsp.enable('lua_ls')
 
 vim.lsp.config('pyright', {
@@ -52,4 +54,16 @@ vim.lsp.config('pyright', {
     end
 })
 
+vim.lsp.config('ts_ls', {
+    on_attach = function(client, bufnr)
+        setup_lsp_buffer_keybinds(bufnr)
+    end
+})
+
+vim.lsp.enable('eslint')
+
 vim.lsp.enable('pyright')
+
+vim.lsp.enable('bashls')
+
+vim.lsp.enable('ts_ls')

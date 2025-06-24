@@ -5,7 +5,7 @@ lint.linters_by_ft = {
     yaml = { 'yamllint', 'cfn_lint' }
 }
 
-vim.api.nvim_create_autocmd({"BufReadPost", "BufWritePost"}, {
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "ModeChanged", "BufEnter" }, {
     pattern = { "*.py" },
     callback = function()
         -- don't throw errors if our linters aren't installed
@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd({"BufReadPost", "BufWritePost"}, {
     end
 })
 
-vim.api.nvim_create_autocmd({"BufReadPost", "BufWritePost"}, {
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "ModeChanged", "BufEnter" }, {
     pattern = { "*.yaml" },
     callback = function()
         -- don't throw errors if our linters aren't installed

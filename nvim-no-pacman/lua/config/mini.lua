@@ -160,7 +160,8 @@ miniclue.setup({
 
 	clues = {
 		-- Enhance this by adding descriptions for <Leader> mapping groups
-		{ mode = "n", keys = "<Leader>f", desc = "[F]ind" },
+		{ mode = "n", keys = "<Leader>f", desc = "[f]ind" },
+		{ mode = "n", keys = "<Leader>g", desc = "[g]it" },
 		miniclue.gen_clues.builtin_completion(),
 		-- miniclue.gen_clues.g(),
 		miniclue.gen_clues.marks(),
@@ -183,3 +184,6 @@ hipatterns.setup({
 		hex_color = hipatterns.gen_highlighter.hex_color(),
 	},
 })
+
+local git = require('mini.git')
+git.setup()

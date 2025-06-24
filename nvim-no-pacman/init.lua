@@ -46,7 +46,8 @@ local include = {
    "full_visual_line",
    "nvim-lint",
    "conform",
-   "todo-comments"
+   "todo-comments",
+   "blame.nvim"
 }
 
 local exclude = {}
@@ -155,6 +156,10 @@ require("nordic").setup({
       bold = true
    }
 })
+
+require("blame").setup()
+
+vim.keymap.set('n', '<Leader>gb', '<CMD>BlameToggle<CR>', { desc = "[g]it [b]lame" })
 
 -- this complements the helix line behaviour and helps with low-contrast
 -- highlights like in nordic
