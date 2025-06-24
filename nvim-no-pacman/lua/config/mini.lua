@@ -41,7 +41,7 @@ MiniIcons.tweak_lsp_kind("prepend")
 
 
 vim.keymap.set("n", "<leader>ff",
-	function() MiniPick.builtin.cli({ command = { "rg", "--files", "--hidden", "--ignore-file=ignorefile" } }) end,
+	function() MiniPick.builtin.cli({ command = { "rg", "--files", "--hidden" } }) end,
 	{ desc = "[f]ind [f]iles" })
 -- vim.keymap.set("n", "<leader>ff", function() MiniPick.builtin.files({ tool = "rg" }) end, { desc = "[f]ind [f]iles" })
 vim.keymap.set("n", "<leader>fb", MiniPick.builtin.buffers, { desc = "[f]ind [b]uffer" })
