@@ -7,8 +7,9 @@ return {
 	font = wezterm.font 'Hack Nerd Font Mono',
 	enable_wayland = true,
 	keys = {
-		{ key = 'V',   mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
+		{ key = 'V',   mods = 'CTRL',                action = act.PasteFrom 'Clipboard' },
 		{ key = 'F11', action = act.ToggleFullScreen },
 	},
-	window_decorations = "RESIZE",
+	-- window_decorations = "RESIZE",
+	window_close_confirmation = "NeverPrompt"
 }
