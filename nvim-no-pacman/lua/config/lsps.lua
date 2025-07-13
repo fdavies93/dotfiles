@@ -60,6 +60,9 @@ vim.lsp.config('ts_ls', {
     end
 })
 
+
+vim.lsp.enable('marksman')
+
 vim.lsp.enable('eslint')
 
 vim.lsp.enable('pyright')

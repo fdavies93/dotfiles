@@ -47,7 +47,8 @@ local include = {
    "nvim-lint",
    "conform",
    "todo-comments",
-   "blame.nvim"
+   "blame.nvim",
+   "daily-notes.nvim"
 }
 
 local exclude = {}
@@ -167,5 +168,6 @@ require("full_visual_line").setup()
 
 require("config.mini")
 
+require("config.daily-notes")
 
 vim.cmd.colorscheme("nordic")
