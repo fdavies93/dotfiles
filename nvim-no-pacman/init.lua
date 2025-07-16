@@ -147,7 +147,10 @@ require("oil").setup({
 vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "[O]il" })
 
 require("auto-session").setup()
-require("render-markdown").setup()
+require("render-markdown").setup({
+   enabled = false,
+   completions = { lsp = { enabled = true } }
+})
 
 require("nordic").setup({
    swap_backgrounds = true,
