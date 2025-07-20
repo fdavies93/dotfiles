@@ -3,7 +3,7 @@ local act = wezterm.action
 
 return {
 	enable_tab_bar = false,
-	color_scheme = 'Oxocarbon Dark',
+	color_scheme = 'carbonfox',
 	font = wezterm.font 'Hack Nerd Font Mono',
 	enable_wayland = true,
 	keys = {
